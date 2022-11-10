@@ -1,13 +1,29 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Libre Baskerville', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Libre Baskerville', serif;
+}
+
+#weather-widget-card {
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px solid black;
+  border-radius: 5px;
+  width: 15rem;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+}
+
+#mainBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
