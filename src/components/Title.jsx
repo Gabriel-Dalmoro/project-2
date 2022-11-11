@@ -7,8 +7,7 @@ function Title() {
       <header>
         <h3>Search</h3>
         <div className='icon-title'>
-          {/* <FontAwesomeIcon id='icon' icon="fa-solid fa-person-snowboarding" /> */}
-          <h1 id='main-title'>Calgary Activity App</h1>
+        <h1 id='main-title'>FunActive</h1>
         </div>
         <h3>Login</h3>
       </header>

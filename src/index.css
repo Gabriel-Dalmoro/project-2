@@ -21,9 +21,3 @@ code {
   text-align: center;
   padding: 15px;
 }
-
-#mainBody {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

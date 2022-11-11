@@ -10,6 +10,7 @@ function ActivityCards() {
         <div className="cards">Skiing</div>
         <div className="cards">Ice Skating</div>
         <div className="cards">Soccer</div>
+        <div className="cards">Basketball</div>
     </div>
     </>
   )

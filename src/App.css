@@ -29,3 +29,28 @@ header{
   text-align: center;
   margin: 0px 30px;
 }
+
+.mainBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activityCards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 50px 10px 50px;
+}
+
+.activityCards > * {
+  flex: 1 1 33%;
+}
+
+.cards {
+  border: 5px solid black;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 3px;
+  flex-wrap: wrap;
+  text-align: center;
+}
