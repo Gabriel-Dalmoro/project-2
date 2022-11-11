@@ -11,6 +11,7 @@ header{
   align-items:center;
   justify-content: space-around;
 }
+
 #main-title {
   display: flex;
   justify-content: center;
@@ -47,10 +48,20 @@ header{
 }
 
 .cards {
-  border: 5px solid black;
+  border: 1px solid black;
   border-radius: 5px;
   padding: 50px;
-  margin: 3px;
+  margin: 5px;
   flex-wrap: wrap;
   text-align: center;
+  transition: transform 400ms ease;
+  transition: border-color 0.1s;
+  height: 50%;
+  width: 50%;
+
+}
+
+.cards:hover {
+  border-color: #646cff;
+  transform: scale(1.03);
 }
