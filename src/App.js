@@ -1,15 +1,20 @@
 // import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Body from './components/Body.jsx';
-import Head from './components/Head.jsx';
 import Title from './components/Title.jsx';
+import About from './pages/About.jsx';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
 
 function App() {
   return (
     <>
-      <Head />
       <Title />
-      <Body />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+      </Routes>
     </>
   );
 }

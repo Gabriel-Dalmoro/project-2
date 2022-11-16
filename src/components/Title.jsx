@@ -1,17 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Title() {
   return (
     <>
-      {/* <script src="https://kit.fontawesome.com/83f09b8128.js" crossOrigin="anonymous"></script> */}
       <header>
+        <h1 id='main-title'><Link to='/'>FunActive</Link></h1>
         <h3>Search</h3>
-        <h1 id='main-title'>FunActive</h1>
-        <h3>Login</h3>
+        <h3><Link to='/about'>About</Link></h3>
+        <h3><Link to='/login'>Login</Link></h3>
       </header>
-      <p id='subtitle'>
-        What would you like to do today?
-      </p>
     </>
   )
 }
