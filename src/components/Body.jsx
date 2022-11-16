@@ -5,6 +5,9 @@ import WeatherWidget from './WeatherWidget.jsx'
 function Body() {
   return (
     <div className="mainBody">
+      <p id='subtitle'>
+        What would you like to do today?
+      </p>
         <WeatherWidget />
         <ActivityCards />
     </div>
