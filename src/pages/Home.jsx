@@ -1,18 +1,19 @@
-import React from 'react'
-import ActivityCards from '../components/ActivityCards.jsx';
+import React from 'react';
+
 import Body from '../components/Body.jsx';
 import Head from '../components/Head.jsx';
-import WeatherWidget from '../components/WeatherWidget.jsx';
+
+import Weather from '../components/Weather.jsx';
 
 const Home = () => {
   return (
     <div>
-    <Head />
-    <WeatherWidget />
-    <ActivityCards />
-    <Body />
-    </div>
-)
-}
+      <Head />
+      <Weather />
 
-export default Home
+      <Body />
+    </div>
+  );
+};
+
+export default Home;
