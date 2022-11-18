@@ -5,18 +5,18 @@ import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
 import './Weather.css';
 import NavBar from './components/NavBar.jsx';
-// import Footer from './components/Footer.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/login" element={<Login />}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/login' element={<Login />}></Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
