@@ -1,20 +1,7 @@
 import React, { useEffect as useMyEffect, useState } from 'react';
-// import axios from 'axios';
 
 function Weather() {
   const [data, setData] = useState({});
-  // const [location, setLocation] = useState('');
-  // const url = `${process.env.WEATHER_API}`;
-
-  // const searchLocation = event => {
-  //   if (event.key === 'Enter') {
-  //     axios.get(url).then(response => {
-  //       setData(response.data);
-  //       console.log(response.data);
-  //     });
-  //     setLocation('');
-  //   }
-  // };
 
   const getCurrentWeather = async () => {
     console.log('hello from getCurrentTime');
@@ -33,12 +20,10 @@ function Weather() {
     const id = setInterval(() => {
       console.log('hello from interval');
       getCurrentWeather();
-    }, 3500);
+    }, 500);
 
     return () => clearInterval(id);
   }, []);
-
-  // const clearCurrentTime = () => setCurrentWeather(null);
 
   return (
     <div className="app">
@@ -57,6 +42,8 @@ function Weather() {
             </div>
           </div>
         </div>
+        <div className="title">What activity will you like to do today?</div>
+
         <div
           style={{
             display: 'flex',
