@@ -1,44 +1,59 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useEffect as useMyEffect, useState } from 'react';
+// import axios from 'axios';
 
 function Weather() {
   const [data, setData] = useState({});
-  const [location, setLocation] = useState('');
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=188238907b5805ea51f2b1e6037fec79`;
+  // const [location, setLocation] = useState('');
+  // const url = `${process.env.WEATHER_API}`;
 
-  const searchLocation = event => {
-    if (event.key === 'Enter') {
-      axios.get(url).then(response => {
-        setData(response.data);
-        console.log(response.data);
-      });
-      setLocation('');
+  // const searchLocation = event => {
+  //   if (event.key === 'Enter') {
+  //     axios.get(url).then(response => {
+  //       setData(response.data);
+  //       console.log(response.data);
+  //     });
+  //     setLocation('');
+  //   }
+  // };
+
+  const getCurrentWeather = async () => {
+    console.log('hello from getCurrentTime');
+    try {
+      let response = await fetch('http://localhost:5001/weather');
+      let values = await response.json();
+      console.log(values);
+      setData(values);
+    } catch (ex) {
+      console.log(ex);
     }
   };
 
+  useMyEffect(() => {
+    console.log('hello from useEffect');
+    const id = setInterval(() => {
+      console.log('hello from interval');
+      getCurrentWeather();
+    }, 3500);
+
+    return () => clearInterval(id);
+  }, []);
+
+  // const clearCurrentTime = () => setCurrentWeather(null);
+
   return (
     <div className="app">
-      <div className="search">
-        <input
-          value={location}
-          onChange={event => setLocation(event.target.value)}
-          onKeyPress={searchLocation}
-          placeholder="Enter Location"
-          type="text"
-        />
-      </div>
       <div className="location">
-        <p>{data.name}</p>
+        <p>{data.location}</p>
       </div>
       <div className="container">
         <div className="top">
           <div className="temp">
-            {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
+            {data.temperature ? <h1>{data.temperature}°C</h1> : null}
           </div>
 
           <div style={{ width: '0px' }}>
             <div className="description">
-              <p>{data.weather ? <h1>{data.weather[0].main}</h1> : null}</p>
+              <p>{data.conditions ? <h1>{data.conditions}</h1> : null}</p>
             </div>
           </div>
         </div>
@@ -54,23 +69,23 @@ function Weather() {
         >
           <input placeholder="Search Activity..."></input>
         </div>
-        {data.name != undefined && (
+        {data.location !== undefined && (
           <div className="bottom">
             <div className="feels">
-              {data.main ? (
-                <p className="bold">{data.main.feels_like.toFixed()}°C</p>
+              {data.feels_like ? (
+                <p className="bold">{data.feels_like}°C</p>
               ) : null}
 
               <p>Feels Like</p>
             </div>
             <div className="humidity">
-              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
+              {data.humidity ? <p className="bold">{data.humidity}%</p> : null}
 
               <p>Humidity</p>
             </div>
             <div className="wind">
-              {data.wind ? (
-                <p className="bold">{data.wind.speed.toFixed()} km/h</p>
+              {data.wind_speed ? (
+                <p className="bold">{data.wind_speed} km/h</p>
               ) : null}
 
               <p>Wind Speed</p>
