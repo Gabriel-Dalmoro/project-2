@@ -13,6 +13,7 @@ function Body() {
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#activities">Activities</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#login">Login</a></li>
           <li><a href="#search">Search</a></li>
@@ -23,7 +24,7 @@ function Body() {
     <div className="center">
       <div className="title">What activity will you like to do today?</div>
       <div className = "search bar"/>
-        <input type = "text" placeholder = "" size = "100"/>
+        <input type = "text" placeholder = ""/>
     </div>
   </div>
   )
