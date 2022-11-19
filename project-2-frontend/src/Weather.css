@@ -100,11 +100,12 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  width: 100%;
+  width: 60%;
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.5px) saturate(180%);
 }
 
 .bold {
@@ -119,7 +120,7 @@ h1 {
   border-radius: 60px;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(1px) saturate(180%);
+  backdrop-filter: blur(0.5px) saturate(180%);
 }
 
 .search-bar .input {
@@ -129,5 +130,5 @@ h1 {
   outline: none;
   padding: 24px 20px;
   font-size: 20px;
-  color: #cac7ff;
+  color: #f8f8f8;
 }
