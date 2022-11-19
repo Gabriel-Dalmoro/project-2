@@ -54,7 +54,9 @@ function Weather() {
             height: '100%',
           }}
         >
-          <input placeholder="Search Activity..."></input>
+          <form action="" className="search-bar">
+            <input type="text" placeholder="Search Activity..."></input>
+          </form>
         </div>
         {data.location !== undefined && (
           <div className="bottom">
