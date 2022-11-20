@@ -6,7 +6,7 @@ import { mockData } from './mockWeather.js';
 
 dotenv.config();
 
-const PORT = 5001;
+const PORT = 5010;
 const app = express();
 
 app.use(cors());
@@ -56,4 +56,4 @@ app.get('/weather', async (req, res) => {
   }
 });
 
-app.listen(5001, () => console.log(`Listening on ${PORT}`));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
