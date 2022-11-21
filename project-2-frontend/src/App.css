@@ -327,3 +327,18 @@ footer a:hover {
     padding-left: 0;
   }
 }
+
+.MUIcards {
+  margin: 15px;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 250;
+  max-width: 350;
+}
+
+.MUIcards > * {
+  flex: 1 1 33%;
+}

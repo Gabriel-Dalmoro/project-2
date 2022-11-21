@@ -4,21 +4,21 @@ function Weather() {
   const [data, setData] = useState({});
 
   const getCurrentWeather = async () => {
-    console.log('hello from getCurrentTime');
+    // console.log('hello from getCurrentTime');
     try {
       let response = await fetch('http://localhost:5001/weather');
       let values = await response.json();
-      console.log(values);
+      // console.log(values);
       setData(values);
     } catch (ex) {
-      console.log(ex);
+      // console.log(ex);
     }
   };
 
   useMyEffect(() => {
-    console.log('hello from useEffect');
+    // console.log('hello from useEffect');
     const id = setInterval(() => {
-      console.log('hello from interval');
+      // console.log('hello from interval');
       getCurrentWeather();
     }, 500);
 
