@@ -33,11 +33,10 @@ function Footer() {
     
             </div>
                 <div className="media-icons">
-                  <a href="#"><i className="fab fa-facebook-f" /></a>
-                  <a href="#"><i className="fab fa-instagram" /></a>
-                  <a href="#"><i className="fab fa-twitter" /></a>
-                  <a href="#"><i className="fab fa-youtube" /></a>
-                  <a href="#"><i className="fab fa-linkedin-in" /></a>
+                  <a href="https://www.instagram.com/inceptionu_ltd/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram" /></a>
+                  <a href="https://twitter.com/_inceptionu"><i className="fab fa-twitter" /></a>
+                  <a href="https://www.youtube.com/@inceptionultd6615"><i className="fab fa-youtube" /></a>
+                  <a href="https://www.linkedin.com/company/inceptionultd/"><i className="fab fa-linkedin-in" /></a>
                 </div>
             </div>
           <div className="bottom">

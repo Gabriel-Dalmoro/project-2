@@ -1,7 +1,7 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
-import cors from 'cors';
+// import cors from 'cors';
 import { mockData } from './mockWeather.js';
 
 dotenv.config();
@@ -11,15 +11,6 @@ const app = express();
 
 // app.use(cors());
 
-// Create endpoint
-// app.get('/slow', (req, res) => {
-//   console.log('delay for 1 seconds');
-//   setTimeout(() => {
-//     let seconds = new Date().getTime();
-//     res.send({ currentTime: seconds });
-//   });
-// });
-
 // const APIKEY = process.env.API_KEY_GAB;
 
 // const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=calgary&units=metric&appid=${APIKEY}`;
@@ -28,8 +19,8 @@ const getWeather = async () => {
   // const response = await fetch(weatherUrl);
   // const data = await response.json();
 
-  console.log(mockData.name);
-  console.log(mockData.weather[0].description);
+  // console.log(mockData.name);
+  // console.log(mockData.weather[0].description);
   return {
     location: mockData.name,
     conditions: mockData.weather[0].description,

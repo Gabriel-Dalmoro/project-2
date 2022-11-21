@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Body() {
   return (
@@ -6,36 +7,21 @@ function Body() {
       <nav>
         <div className="menu">
           <div className="logo">
-            <a href="#">Funactive</a>
+          <Link to='/'>FunActive</Link>
           </div>
           <ul>
             <li>
-              <a href="#home">Home</a>
+            <Link to='/'>Home</Link>
             </li>
             <li>
-              <a href="#about">About</a>
+            <Link to='/about'>About</Link>
             </li>
             <li>
-              <a href="#activities">Activities</a>
-            </li>
-            <li>
-              <a href="#gallery">Gallery</a>
-            </li>
-            <li>
-              <a href="#login">Login</a>
-            </li>
-            <li>
-              <a href="#search">Search</a>
-            </li>
+            <Link to='/login'>Login</Link>  
+                </li>
           </ul>
         </div>
       </nav>
-      {/* <div className="img" />
-      <div className="center">
-        <div className="title">What activity will you like to do today?</div>
-        <div className="search bar" />
-        <input type="text" placeholder="" />
-      </div> */}
     </div>
   );
 }
