@@ -100,13 +100,35 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  width: 100%;
+  width: 60%;
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.5px) saturate(180%);
 }
 
 .bold {
   font-weight: 700;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.5px) saturate(180%);
+}
+
+.search-bar .input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 20px;
+  color: #f8f8f8;
 }

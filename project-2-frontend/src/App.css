@@ -1,12 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  justify-content: center;
+  /* justify-content: center;
   align-items: center;
   font-family: 'DM Sans', sans-serif;
   color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(2, 0, 36);
-  background: rgb(255, 255, 255);
+  background: rgb(2, 0, 36); */
+  /* background: rgb(255, 255, 255); */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: black;
+  background: #e31837;
+  padding: 0 16px;
 }
 
 header {
@@ -169,6 +181,26 @@ nav .menu {
 
 .activityCards > * {
   flex: 1 1 33%;
+}
+
+.activity {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+.activity h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.activity p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .cards {
