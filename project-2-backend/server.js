@@ -9,7 +9,7 @@ dotenv.config();
 const PORT = 5001;
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 
 const APIKEY = process.env.API_KEY;
 
