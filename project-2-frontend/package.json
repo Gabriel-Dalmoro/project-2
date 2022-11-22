@@ -1,6 +1,6 @@
 {
   "name": "repo-project-2",
-  "proxy": "http://localhost:5010",
+  "proxy": "http://localhost:5001",
   "version": "0.1.0",
   "type": "module",
   "private": true,
