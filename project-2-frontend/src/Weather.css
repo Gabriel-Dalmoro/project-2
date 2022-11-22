@@ -105,7 +105,7 @@ h1 {
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(0.5px) saturate(180%);
+  backdrop-filter: blur(3.5px) saturate(180%);
 }
 
 .bold {

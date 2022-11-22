@@ -1,19 +1,22 @@
 import React from 'react';
-import ActivityCards from './ActivityCards.jsx';
-import activities from '../activities.js';
+// import ActivityCards from './ActivityCards.jsx';
+// import activities from '../activities.js';
+import MUIcards from './MUIcards.jsx';
 
-function Body(props) {
+
+function Body() {
   return (
     <div className="mainBody">
-      {/* <p id="subtitle">What would you like to do today?</p> */}
-      {activities.map(activityItem => (
+      {/* {activities.map(activityItem => (
         <ActivityCards
           name={activityItem.name}
           maxTemp={activityItem.maxTemp}
           minTemp={activityItem.minTemp}
           wind={activityItem.maxWind}
         />
-      ))}
+      ))} */}
+      <MUIcards />
+
     </div>
   );
 }
