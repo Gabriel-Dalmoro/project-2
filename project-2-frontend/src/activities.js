@@ -7,7 +7,8 @@ const activities = [
     minTemp: 15,
     maxTemp: 35,
     maxWind: 15,
-    Precipitation: 2,
+    MinPrecipitation: 2,
+    MinParticipants: 10,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const activities = [
     maxTemp: 35,
     maxWind: 10,
     Precipitation: 2,
+    MinParticipants: 1,
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const activities = [
     maxTemp: 38,
     maxWind: 12,
     Precipitation: 2,
+    MinParticipants: 4,
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const activities = [
     maxTemp: 38,
     maxWind: 15,
     Precipitation: 2,
+    MinParticipants: 1,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ const activities = [
     maxTemp: 35,
     maxWind: 20,
     Precipitation: 2,
+    MinParticipants: 1,
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ const activities = [
     maxTemp: 5,
     maxWind: 20,
     Precipitation: 10,
+    MinParticipants: 1,
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ const activities = [
     maxTemp: 5,
     maxWind: 15,
     Precipitation: 10,
+    MinParticipants: 1,
   },
 ];
 
