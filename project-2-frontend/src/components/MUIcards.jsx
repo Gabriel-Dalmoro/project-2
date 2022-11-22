@@ -31,7 +31,10 @@ function MUIcards(props) {
               {props.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Best season: {props.season}
+              Suitable season: {props.season}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Minimum Participant: {props.minParticipant}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Max Temperature: {props.maxTemp}

@@ -7,8 +7,8 @@ const activities = [
     minTemp: 15,
     maxTemp: 35,
     maxWind: 15,
-    MinPrecipitation: 2,
-    MinParticipants: 10,
+    precipitation: 2,
+    minParticipant: 10,
   },
   {
     id: 2,
@@ -18,8 +18,8 @@ const activities = [
     minTemp: 18,
     maxTemp: 35,
     maxWind: 10,
-    Precipitation: 2,
-    MinParticipants: 1,
+    precipitation: 2,
+    minParticipant: 1,
   },
   {
     id: 3,
@@ -29,8 +29,8 @@ const activities = [
     minTemp: 18,
     maxTemp: 38,
     maxWind: 12,
-    Precipitation: 2,
-    MinParticipants: 4,
+    precipitation: 2,
+    minParticipant: 4,
   },
   {
     id: 4,
@@ -40,8 +40,8 @@ const activities = [
     minTemp: 15,
     maxTemp: 38,
     maxWind: 15,
-    Precipitation: 2,
-    MinParticipants: 1,
+    precipitation: 2,
+    minParticipant: 1,
   },
   {
     id: 5,
@@ -51,8 +51,8 @@ const activities = [
     minTemp: 15,
     maxTemp: 35,
     maxWind: 20,
-    Precipitation: 2,
-    MinParticipants: 1,
+    precipitation: 2,
+    minParticipant: 1,
   },
   {
     id: 6,
@@ -62,8 +62,8 @@ const activities = [
     minTemp: -20,
     maxTemp: 5,
     maxWind: 20,
-    Precipitation: 10,
-    MinParticipants: 1,
+    precipitation: 10,
+    minParticipant: 1,
   },
   {
     id: 7,
@@ -73,8 +73,8 @@ const activities = [
     minTemp: -20,
     maxTemp: 5,
     maxWind: 15,
-    Precipitation: 10,
-    MinParticipants: 1,
+    precipitation: 10,
+    minParticipant: 1,
   },
 ];
 

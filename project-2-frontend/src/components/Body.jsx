@@ -21,6 +21,7 @@ function Body() {
           key={activityItem.id}
           name={activityItem.name}
           season={activityItem.season}
+          minParticipant={activityItem.minParticipant}
           maxTemp={activityItem.maxTemp}
           minTemp={activityItem.minTemp}
           wind={activityItem.maxWind}
