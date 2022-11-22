@@ -1,7 +1,7 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
-// import cors from 'cors';
+import cors from 'cors';
 import { mockData } from './mockWeather.js';
 
 dotenv.config();
@@ -9,9 +9,9 @@ dotenv.config();
 const PORT = 5001;
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 
-// const APIKEY = process.env.API_KEY_GAB;
+const APIKEY = process.env.API_KEY;
 
 // const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=calgary&units=metric&appid=${APIKEY}`;
 
