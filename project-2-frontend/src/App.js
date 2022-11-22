@@ -6,7 +6,7 @@ import Home from './pages/Home.jsx';
 import './Weather.css';
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
-import LoginRegister from './pages/LoginRegister';
+import LoginRegister from './pages/LoginRegister.jsx';
 
 function App() {
   return (
