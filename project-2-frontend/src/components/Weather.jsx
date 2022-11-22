@@ -54,9 +54,9 @@ function Weather() {
             height: '100%',
           }}
         >
-          {/* <form action="" className="search-bar">
-            <input type="text" placeholder="Search Activity..."></input>
-          </form> */}
+           <form action="" className="search-bar">
+            <input type="text" placeholder="Search Activity......" size = {51}/>
+          </form>
         </div>
         {data.location !== undefined && (
           <div className="bottom">
