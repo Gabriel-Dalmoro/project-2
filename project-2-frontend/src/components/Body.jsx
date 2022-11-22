@@ -1,8 +1,7 @@
 import React from 'react';
 // import ActivityCards from './ActivityCards.jsx';
-// import activities from '../activities.js';
+import activities from '../activities.js';
 import MUIcards from './MUIcards.jsx';
-
 
 function Body() {
   return (
@@ -15,8 +14,18 @@ function Body() {
           wind={activityItem.maxWind}
         />
       ))} */}
-      <MUIcards />
+      {/* <MUIcards /> */}
 
+      {activities.map(activityItem => (
+        <MUIcards
+          key={activityItem.id}
+          name={activityItem.name}
+          season={activityItem.season}
+          maxTemp={activityItem.maxTemp}
+          minTemp={activityItem.minTemp}
+          wind={activityItem.maxWind}
+        />
+      ))}
     </div>
   );
 }

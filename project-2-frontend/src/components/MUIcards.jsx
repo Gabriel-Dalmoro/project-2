@@ -1,15 +1,51 @@
-import React from 'react'
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import { SportsGolf, SportsFootball, SportsSoccer, SportsBasketball, SportsTennis, SportsHockey }from '@mui/icons-material';
+import {
+  SportsGolf,
+  SportsFootball,
+  SportsSoccer,
+  SportsBasketball,
+  SportsTennis,
+  SportsHockey,
+} from '@mui/icons-material';
 
-function MUIcards() {
+function MUIcards(props) {
   return (
     <div className="MUIcards">
-    <Card sx={{ maxWidth: 350 }}>
+      <Card sx={{ maxWidth: 350 }}>
+        <CardActionArea>
+          <CardMedia sx={{ textAlign: 'center', mt: 3 }}>
+            <SportsSoccer sx={{ fontSize: 80 }} />
+          </CardMedia>
+          <CardContent>
+            <Typography
+              sx={{ textAlign: 'center' }}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              {props.name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Best season: {props.season}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Max Temperature: {props.maxTemp}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Min Temperature: {props.minTemp}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Highest Wind speed: {props.wind}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+      {/* <Card sx={{ maxWidth: 350 }}>
       <CardActionArea>
           <CardMedia sx={{textAlign: 'center', mt: 3 }} >
               <SportsSoccer sx={{ fontSize: 80 }} />
@@ -98,9 +134,9 @@ function MUIcards() {
           </Typography>
         </CardContent>
       </CardActionArea>
-    </Card>
+    </Card> */}
     </div>
   );
 }
 
-export default MUIcards
+export default MUIcards;
