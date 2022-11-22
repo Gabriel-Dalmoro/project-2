@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import Fab from "@mui/material/Fab";
-import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
+import React, { useState } from 'react';
+import Fab from '@mui/material/Fab';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
-export const Register = (props) => {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [name, setName] = useState("");
+const Register = props => {
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
+  const [name, setName] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     console.log(email);
   };
@@ -21,7 +21,7 @@ export const Register = (props) => {
         <label htmlFor="email">Email</label>
         <input
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
           type="email"
           placeholder="enteryour@realemail.com"
           id="email"
@@ -30,13 +30,13 @@ export const Register = (props) => {
         <label htmlFor="password">Password</label>
         <input
           value={pass}
-          onChange={(e) => setPass(e.target.value)}
+          onChange={e => setPass(e.target.value)}
           type="password"
           placeholder="********"
           id="password"
           name="password"
         />
-        {/* <button type="submit">Register</button> */}
+
         <Fab
           type="submit"
           variant="extended"
@@ -48,9 +48,11 @@ export const Register = (props) => {
           Sign Up
         </Fab>
       </form>
-      <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
+      <button className="link-btn" onClick={() => props.onFormSwitch('login')}>
         Already have an account? Login here.
       </button>
     </div>
   );
 };
+
+export default Register;
