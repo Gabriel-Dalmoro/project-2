@@ -5,8 +5,6 @@ import MUIcards from './MUIcards.jsx';
 function Body({weatherData}) {
   const filteredActivities = activities.filter(el => el.minTemp < weatherData.temperature);
   
-  for (let i = 0; i < activities.length; i++){
-    if (weatherData.temperature > activities[i].minTemp) {
       return (
         <div className="mainBody">
           {filteredActivities.map(activityItem => (
@@ -22,6 +20,4 @@ function Body({weatherData}) {
         </div>
       );
     }
-  }
-}
 export default Body;
