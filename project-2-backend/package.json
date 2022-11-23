@@ -10,7 +10,7 @@
     "process-env": "^2.0.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "name": "project-2-backend",
   "type": "module",

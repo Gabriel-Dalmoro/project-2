@@ -1,30 +1,6 @@
-import React, { useEffect as useMyEffect, useState } from 'react';
+import React from 'react';
 
-function Weather() {
-  const [weatherData, setWeatherData] = useState({});
-
-  const getCurrentWeather = async () => {
-    // console.log('hello from getCurrentTime');
-    try {
-      let response = await fetch('http://localhost:5001/weather');
-      let values = await response.json();
-      // console.log(values);
-      setWeatherData(values);
-    } catch (ex) {
-      // console.log(ex);
-    }
-  };
-
-  useMyEffect(() => {
-    // console.log('hello from useEffect');
-    const id = setInterval(() => {
-      // console.log('hello from interval');
-      getCurrentWeather();
-    }, 500);
-
-    return () => clearInterval(id);
-  }, []);
-
+function Weather({weatherData}) {
   return (
     <div className="app">
       <div className="location">
