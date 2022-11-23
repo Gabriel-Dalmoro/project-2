@@ -14,8 +14,14 @@ import {
 } from '@mui/icons-material';
 
 function MUIcards(props) {
+const openActivityPage = () => {
+  console.log('try to open', props.url)
+  const url = props.url || 'http://google.com'
+  window.open(url, '_blank')
+}
   return (
-    <div className="MUIcards">
+    <div className="MUIcards" onClick={openActivityPage}>
+    
       <Card sx={{ maxWidth: 350 }}>
         <CardActionArea>
           <CardMedia sx={{ textAlign: 'center', mt: 3 }}>
