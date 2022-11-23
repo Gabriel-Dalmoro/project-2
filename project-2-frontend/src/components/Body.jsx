@@ -3,20 +3,23 @@ import activities from '../activities.js';
 import MUIcards from './MUIcards.jsx';
 
 function Body({weatherData}) {
-  const filteredActivities = activities.filter(el => el.minTemp < weatherData.temperature);
+  const filteredActivities = activities.filter(el => el.minTemp <= 20);
   
       return (
         <div className="mainBody">
-          {filteredActivities.map(activityItem => (
-            <MUIcards
-              key={activityItem.id}
-              name={activityItem.name}
-              season={activityItem.season}
-              maxTemp={activityItem.maxTemp}
-              minTemp={activityItem.minTemp}
-              wind={activityItem.maxWind}
-            />
-          ))}
+          <div className="filteredCards">
+            {filteredActivities.map(activityItem => (
+              <MUIcards
+                key={activityItem.id}
+                name={activityItem.name}
+                season={activityItem.season}
+                maxTemp={activityItem.maxTemp}
+                minTemp={activityItem.minTemp}
+                wind={activityItem.maxWind}
+                url={activityItem.url}
+              />
+            ))}
+          </div>
         </div>
       );
     }

@@ -29,9 +29,6 @@ header {
   background-color: black;
 }
 
-header > * {
-}
-
 #main-title {
   display: flex;
   justify-content: center;
@@ -169,8 +166,17 @@ nav .menu {
 
 .mainBody {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filteredCards {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .activityCards {
