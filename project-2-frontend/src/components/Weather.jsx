@@ -1,7 +1,7 @@
 import React, { useEffect as useMyEffect, useState } from 'react';
 
 function Weather() {
-  const [data, setData] = useState({});
+  const [weatherData, setWeatherData] = useState({});
 
   const getCurrentWeather = async () => {
     // console.log('hello from getCurrentTime');
@@ -9,7 +9,7 @@ function Weather() {
       let response = await fetch('http://localhost:5001/weather');
       let values = await response.json();
       // console.log(values);
-      setData(values);
+      setWeatherData(values);
     } catch (ex) {
       // console.log(ex);
     }
@@ -28,17 +28,17 @@ function Weather() {
   return (
     <div className="app">
       <div className="location">
-        <p>{data.location}</p>
+        <p>{weatherData.location}</p>
       </div>
       <div className="container">
         <div className="top">
           <div className="temp">
-            {data.temperature ? <h1>{data.temperature}°C</h1> : null}
+            {weatherData.temperature ? <h1>{weatherData.temperature}°C</h1> : null}
           </div>
 
           <div style={{ width: '0px' }}>
             <div className="description">
-              <p>{data.conditions ? <h1>{data.conditions}</h1> : null}</p>
+              <p>{weatherData.conditions ? <h1>{weatherData.conditions}</h1> : null}</p>
             </div>
           </div>
         </div>
@@ -58,23 +58,23 @@ function Weather() {
             <input type="text" placeholder="Search Activity......" size = {51}/>
           </form>
         </div>
-        {data.location !== undefined && (
+        {weatherData.location !== undefined && (
           <div className="bottom">
             <div className="feels">
-              {data.feels_like ? (
-                <p className="bold">{data.feels_like}°C</p>
+              {weatherData.feels_like ? (
+                <p className="bold">{weatherData.feels_like}°C</p>
               ) : null}
 
               <p>Feels Like</p>
             </div>
             <div className="humidity">
-              {data.humidity ? <p className="bold">{data.humidity}%</p> : null}
+              {weatherData.humidity ? <p className="bold">{weatherData.humidity}%</p> : null}
 
               <p>Humidity</p>
             </div>
             <div className="wind">
-              {data.wind_speed ? (
-                <p className="bold">{data.wind_speed} km/h</p>
+              {weatherData.wind_speed ? (
+                <p className="bold">{weatherData.wind_speed} km/h</p>
               ) : null}
 
               <p>Wind Speed</p>
