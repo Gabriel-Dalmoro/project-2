@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -40,7 +41,7 @@ function Footer() {
                 </div>
             </div>
           <div className="bottom">
-            <p>Copyright © 2022 <a href="#">Funactive</a> All rights reserved</p>
+            <p>Copyright © 2022 <Link to='/'>FunActive</Link> All rights reserved</p>
           </div>
         </footer>
       </div>

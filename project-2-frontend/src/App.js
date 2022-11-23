@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './pages/About.jsx';
 import Home from './pages/Home.jsx';
-// import Login from './components/Login.jsx';
 import './Weather.css';
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
