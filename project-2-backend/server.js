@@ -10,7 +10,7 @@ import connectDB from './config/db.js';
 
 dotenv.config();
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 // Connect to database
 connectDB();
@@ -46,6 +46,11 @@ const getWeather = async () => {
     // humidity: data.main.humidity,
   };
 };
+
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Welcome to Funactive' });
+});
+
 app.get('/weather', async (req, res) => {
   try {
     const currentWeather = await getWeather();
