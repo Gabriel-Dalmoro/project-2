@@ -36,6 +36,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     password: hashedPassword,
   });
 
+  // Show status when user is created
   if (user) {
     res.status(201).json({
       _id: user._id,
@@ -57,7 +58,7 @@ export const loginUser = asyncHandler(async (req, res) => {
 
   const user = await User.findOne({ email });
 
-  // Check user and passwords match
+  // Check if user exist and if password match with database
   if (user && (await bcrypt.compare(password, user.password))) {
     res.status(200).json({
       _id: user._id,
