@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { mockData } from './mockWeather.js';
 import colors from 'colors';
+import userRouter from './routes/userRoutes.js';
+import errorHandler from './middleware/errorMiddleware.js';
 
 dotenv.config();
 
