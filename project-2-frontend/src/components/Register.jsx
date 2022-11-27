@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '../components/Spinner';
-
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import { register, reset } from '../features/auth/authSlice';
 
-const Register = props => {
+function Register(props) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -133,6 +133,6 @@ const Register = props => {
       </button>
     </div>
   );
-};
+}
 
 export default Register;

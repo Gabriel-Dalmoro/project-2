@@ -1,37 +1,91 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Fab from '@mui/material/Fab';
 import LoginIcon from '@mui/icons-material/Login';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { FaSignInAlt } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+import { login, reset } from '../features/auth/authSlice';
+import Spinner from '../components/Spinner';
 
-const Login = props => {
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
+function Login(props) {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
 
-  const handleSubmit = e => {
+  const { email, password } = formData;
+
+  // Initialize dispatch
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // This grabs the value from initialState in authSlice.js
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    state => state.auth
+  );
+
+  useEffect(() => {
+    // If there is error, show the error message
+    if (isError) {
+      toast.error(message);
+    }
+
+    // Redirect back to home page when log in is successful
+    if (isSuccess || user) {
+      navigate('/');
+    }
+    // Reset state after successful login
+    dispatch(reset());
+  }, [isError, isSuccess, user, message, navigate, dispatch]);
+
+  const onChange = e => {
+    setFormData(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const onSubmit = e => {
     e.preventDefault();
     console.log(email);
+
+    // Get data from login form
+    const userData = {
+      email,
+      password,
+    };
+    // Dispatch login from authSlice.js
+    dispatch(login(userData));
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="auth-form-container">
       <h2>Login</h2>
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={onSubmit}>
         <label htmlFor="email">Email</label>
         <input
-          value={email}
-          onChange={e => setEmail(e.target.value)}
           type="email"
-          placeholder="enteryour@realemail.com"
           id="email"
+          value={email}
           name="email"
+          onChange={onChange}
+          placeholder="youremail@example.com"
+          required
         />
         <label htmlFor="password">Password</label>
         <input
-          value={pass}
-          onChange={e => setPass(e.target.value)}
           type="password"
-          placeholder="*********"
           id="password"
+          value={password}
+          onChange={onChange}
+          placeholder="*********"
           name="password"
+          required
         />
 
         <Fab
@@ -54,6 +108,6 @@ const Login = props => {
       </button>
     </div>
   );
-};
+}
 
 export default Login;
