@@ -3,6 +3,7 @@ import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { mockData } from './mockWeather.js';
+import colors from 'colors';
 
 dotenv.config();
 
