@@ -9,6 +9,7 @@ const activities = [
     maxWind: 15,
     precipitation: 2,
     minParticipant: 10,
+    url: 'https://www.google.ca/maps/search/baseball/@51.0369277,-114.1497346,11z/data=!3m1!4b1',
   },
   {
     id: 2,
@@ -31,6 +32,7 @@ const activities = [
     maxWind: 12,
     precipitation: 2,
     minParticipant: 4,
+    url: 'https://www.google.ca/maps/search/volleyball/@51.0372626,-114.1497337,11z/data=!3m1!4b1',
   },
   {
     id: 4,
@@ -53,6 +55,7 @@ const activities = [
     maxWind: 20,
     precipitation: 2,
     minParticipant: 1,
+    url: 'https://www.google.ca/maps/search/climbing/@51.0375975,-114.1497329,11z/data=!3m1!4b1',
   },
   {
     id: 6,
@@ -64,6 +67,7 @@ const activities = [
     maxWind: 20,
     precipitation: 10,
     minParticipant: 1,
+    url: 'https://www.google.ca/maps/search/skiing/@51.0377649,-114.1497324,11z/data=!3m1!4b1',
   },
   {
     id: 7,
@@ -75,6 +79,7 @@ const activities = [
     maxWind: 15,
     precipitation: 10,
     minParticipant: 1,
+    url: 'https://www.google.ca/maps/search/cross+country+ski/@51.0379324,-114.149732,11z/data=!4m2!2m1!6e6',
   },
 ];
 
