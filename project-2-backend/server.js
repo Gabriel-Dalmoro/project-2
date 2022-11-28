@@ -10,21 +10,26 @@ import connectDB from './config/db.js';
 
 dotenv.config();
 
+// Server port
 const PORT = process.env.PORT || 5001;
 
-// Connect to database
+// Connect to MongoDB database
 connectDB();
 
+// Express Server setup
 const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Enable Express server to respond to preflight requests
 app.use(cors());
 
 const APIKEY = process.env.API_KEY;
 
 // const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=calgary&units=metric&appid=${APIKEY}`;
 
+// Get specific data from API
 const getWeather = async () => {
   //   const response = await fetch(weatherUrl);
   //   const data = await response.json();
@@ -66,4 +71,5 @@ app.use('/api/users', userRouter);
 
 app.use(errorHandler);
 
+// Server Listener
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
