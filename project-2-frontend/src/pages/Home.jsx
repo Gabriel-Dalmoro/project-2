@@ -1,6 +1,5 @@
 import React, { useEffect as useMyEffect, useState } from 'react';
 import Body from '../components/Body.jsx';
-import Head from '../components/Head.jsx';
 import Weather from '../components/Weather.jsx';
 
 const Home = () => {
@@ -39,7 +38,6 @@ const Home = () => {
 
   return (
     <div>
-      <Head />
       <Weather weatherData={weatherData} />
       <Body weatherData={weatherData} />
     </div>

@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <div>
-      {/* <link rel="stylesheet" href="app.css" /> */}
-      {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
-      {/* <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-      /> */}
       <footer>
         <div className="content">
           <div className="left box">

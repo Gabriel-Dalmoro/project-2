@@ -10,8 +10,6 @@ import Footer from './components/Footer.jsx';
 import Login from './pages/LoginA.jsx';
 import Register from './pages/RegisterA.jsx';
 
-// import LoginRegister from './pages/LoginRegister.jsx';
-
 function App() {
   return (
     <div className="App">
@@ -22,7 +20,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/login" element={<LoginRegister />}></Route> */}
         </Routes>
         <Footer />
       </Router>
