@@ -3,7 +3,7 @@ import Fab from '@mui/material/Fab';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux';
-// import Spinner from '../components/Spinner';
+import Spinner from '../components/Spinner';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration.js';
 import { register, reset } from '../features/auth/authSlice.js';
 
@@ -65,9 +65,9 @@ function Register(props) {
     }
   };
 
-  // if (isLoading) {
-  //   return <Spinner />;
-  // }
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="auth-form-container">
@@ -106,7 +106,7 @@ function Register(props) {
           name="password"
           required
         />
-        <label htmlFor="password">password</label>
+        <label htmlFor="password">Confirm Password</label>
         <input
           type="password"
           id="password2"

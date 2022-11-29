@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 // import { FaSignInAlt } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { login, reset } from '../features/auth/authSlice';
-// import Spinner from '../components/Spinner';
+import Spinner from '../components/Spinner';
 
 function Login(props) {
   const [formData, setFormData] = useState({
@@ -59,9 +59,9 @@ function Login(props) {
     dispatch(login(userData));
   };
 
-  // if (isLoading) {
-  //   return <Spinner />;
-  // }
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="auth-form-container">

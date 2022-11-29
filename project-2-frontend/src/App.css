@@ -375,6 +375,7 @@ footer a:hover {
     border: 1px solid white;
     border-radius: 10px;
     margin: 0.5rem;
+    width: 700px;
   }
 }
 

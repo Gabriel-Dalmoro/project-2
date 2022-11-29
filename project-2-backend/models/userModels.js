@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Please add a password'],
     },
+    bookmarkActivityIds: {
+      type: [Number],
+      default: [],
+    },
     isAdmin: {
       type: Boolean,
       required: true,

@@ -80,6 +80,7 @@ export const getMe = asyncHandler(async (req, res) => {
     id: req.user._id,
     email: req.user.email,
     name: req.user.name,
+    bookmarks: req.user.bookmarkActivityIds,
   };
   res.status(200).json(user);
 });

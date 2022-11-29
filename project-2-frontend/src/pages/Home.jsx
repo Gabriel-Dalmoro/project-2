@@ -5,28 +5,43 @@ import Weather from '../components/Weather.jsx';
 
 const Home = () => {
   const [weatherData, setWeatherData] = useState({});
+  const [profileData, setProfileData] = useState({});
 
   const getCurrentWeather = async () => {
     try {
       let response = await fetch('http://localhost:5001/weather');
       let values = await response.json();
       setWeatherData(values);
-    } catch (ex) {
-    }
+    } catch (ex) {}
   };
 
+  // TODO: This might change based on the redux approach
+  const getProfileData = async () => {
+    try {
+      let response = await fetch('http://localhost:5001/api/users/me');
+      let values = await response.json();
+      setProfileData(values);
+    } catch (ex) {}
+  };
+
+  // Refresh the weather data every 30 minutes
   useMyEffect(() => {
+    getCurrentWeather();
     const id = setInterval(() => {
       getCurrentWeather();
-    }, 1);
+    }, 30 * 60 * 1000);
     return () => clearInterval(id);
+  }, []);
+
+  useMyEffect(() => {
+    getProfileData();
   }, []);
 
   return (
     <div>
       <Head />
-      <Weather weatherData={weatherData}/>
-      <Body weatherData={weatherData}/>
+      <Weather weatherData={weatherData} />
+      <Body weatherData={weatherData} />
     </div>
   );
 };

@@ -7,6 +7,9 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { login, reset } from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
+//Do not use this file
+//Login and register has moved into pages folder
+//This file will be deleted
 
 function Login(props) {
   const [formData, setFormData] = useState({

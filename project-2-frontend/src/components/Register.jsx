@@ -6,7 +6,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '../components/Spinner';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import { register, reset } from '../features/auth/authSlice';
-
+//Do not use this file
+//Login and register has moved into pages folder
+//This file will be deleted
 function Register(props) {
   const [formData, setFormData] = useState({
     name: '',
