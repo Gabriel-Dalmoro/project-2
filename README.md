@@ -26,13 +26,16 @@ This is a full-stack project, using the MERN stack.<br>
 <br>
 <br>
 
-## Backend
+### Backend
 
 - Express to make a server and HTTP calls
+
   <img alt='material UI logo image' src="https://miro.medium.com/max/1400/1*i2fRBk3GsYLeUk_Rh7AzHw.png" width="280" height="120">
   <br>
   <br>
+
 - MongoDB and Mongoose to create and connect to our database
+
   <img alt='material UI logo image' src="https://miro.medium.com/max/512/1*doAg1_fMQKWFoub-6gwUiQ.png" width="120" height="120">
   <br>
   <br>
