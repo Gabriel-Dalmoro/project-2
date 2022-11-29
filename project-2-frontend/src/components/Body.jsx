@@ -16,6 +16,7 @@ function Body({ weatherData }) {
             maxTemp={activityItem.maxTemp}
             minTemp={activityItem.minTemp}
             wind={activityItem.maxWind}
+            icon={activityItem.icon}
             url={activityItem.url}
           />
         ))}

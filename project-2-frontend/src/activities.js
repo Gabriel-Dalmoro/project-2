@@ -1,3 +1,13 @@
+import {
+  SportsGolf,
+  SportsBasketball,
+  DirectionsBike,
+  SportsBaseball,
+  SportsVolleyball,
+  Hiking,
+  Snowboarding,
+} from '@mui/icons-material';
+
 const activities = [
   {
     id: 1,
@@ -10,6 +20,7 @@ const activities = [
     precipitation: 2,
     minParticipant: 10,
     url: 'https://www.google.ca/maps/search/baseball/@51.0369277,-114.1497346,11z/data=!3m1!4b1',
+    icon: <SportsBaseball sx={{ fontSize: 62 }} />,
   },
   {
     id: 2,
@@ -21,6 +32,8 @@ const activities = [
     maxWind: 10,
     precipitation: 2,
     minParticipant: 1,
+    url: 'https://www.google.ca/maps/search/basketball/@51.0214267,-114.1702483,11z/data=!3m1!4b1',
+    icon: <SportsBasketball sx={{ fontSize: 62 }} />,
   },
   {
     id: 3,
@@ -33,6 +46,7 @@ const activities = [
     precipitation: 2,
     minParticipant: 4,
     url: 'https://www.google.ca/maps/search/volleyball/@51.0372626,-114.1497337,11z/data=!3m1!4b1',
+    icon: <SportsVolleyball sx={{ fontSize: 62 }} />,
   },
   {
     id: 4,
@@ -44,10 +58,12 @@ const activities = [
     maxWind: 15,
     precipitation: 2,
     minParticipant: 1,
+    url: 'https://www.google.ca/maps/search/bike+paths/@51.0215942,-114.1702479,11z/data=!3m1!4b1',
+    icon: <DirectionsBike sx={{ fontSize: 62 }} />,
   },
   {
     id: 5,
-    name: 'Climbing',
+    name: 'Hiking',
     season: ['🌼', '🌞', '🍂'],
     imgURL: '',
     minTemp: 15,
@@ -55,11 +71,12 @@ const activities = [
     maxWind: 20,
     precipitation: 2,
     minParticipant: 1,
-    url: 'https://www.google.ca/maps/search/climbing/@51.0375975,-114.1497329,11z/data=!3m1!4b1',
+    url: 'https://www.google.ca/maps/search/hiking/@51.0398724,-114.3178741,10z/data=!4m2!2m1!6e1',
+    icon: <Hiking sx={{ fontSize: 62 }} />,
   },
   {
     id: 6,
-    name: 'Skiing/Snowboarding',
+    name: 'Ski/Snowboard',
     season: ['❄️'],
     imgURL: '',
     minTemp: -20,
@@ -68,10 +85,11 @@ const activities = [
     precipitation: 10,
     minParticipant: 1,
     url: 'https://www.google.ca/maps/search/skiing/@51.0377649,-114.1497324,11z/data=!3m1!4b1',
+    icon: <Snowboarding sx={{ fontSize: 62 }} />,
   },
   {
     id: 7,
-    name: 'Cross-country Skiing',
+    name: 'Golf',
     season: ['❄️'],
     imgURL: '',
     minTemp: -20,
@@ -79,7 +97,8 @@ const activities = [
     maxWind: 15,
     precipitation: 10,
     minParticipant: 1,
-    url: 'https://www.google.ca/maps/search/cross+country+ski/@51.0379324,-114.149732,11z/data=!4m2!2m1!6e6',
+    url: 'https://www.google.ca/maps/search/golf/@51.0219291,-114.170247,11z/data=!4m2!2m1!6e1',
+    icon: <SportsGolf sx={{ fontSize: 62 }} />,
   },
 ];
 
