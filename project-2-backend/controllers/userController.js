@@ -76,6 +76,7 @@ export const loginUser = asyncHandler(async (req, res) => {
 // @route   /api/users/me
 // @access  Private
 export const getMe = asyncHandler(async (req, res) => {
+  console.log(getMe);
   const user = {
     id: req.user._id,
     email: req.user.email,
