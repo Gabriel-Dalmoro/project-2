@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/profile/';
+const API_URL = '/api/users/me';
 
 // Get user Profile
 const getProfile = async token => {

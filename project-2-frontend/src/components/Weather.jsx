@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 
-function Weather({weatherData}) {
+function Weather({ weatherData, user }) {
   return (
     <div className="app">
       <div className="location">
@@ -10,16 +10,25 @@ function Weather({weatherData}) {
       <div className="container">
         <div className="top">
           <div className="temp">
-            {weatherData.temperature ? <h1>{weatherData.temperature}°C</h1> : null}
+            {weatherData.temperature ? (
+              <h1>{weatherData.temperature}°C</h1>
+            ) : null}
           </div>
 
           <div style={{ width: '0px' }}>
             <div className="description">
-              <p>{weatherData.conditions ? <h1>{weatherData.conditions}</h1> : null}</p>
+              <p>
+                {weatherData.conditions ? (
+                  <h1>{weatherData.conditions}</h1>
+                ) : null}
+              </p>
             </div>
           </div>
         </div>
-        <div className="title">What activity will you like to do today?</div>
+        <div className="title">
+          {user?.name && user.name + ' '}What activity will you like to do
+          today?
+        </div>
 
         <div
           style={{
@@ -31,7 +40,7 @@ function Weather({weatherData}) {
             height: '100%',
           }}
         >
-          <SearchBar/>
+          <SearchBar />
         </div>
         {weatherData.location !== undefined && (
           <div className="bottom">
@@ -43,7 +52,9 @@ function Weather({weatherData}) {
               <p>Feels Like</p>
             </div>
             <div className="humidity">
-              {weatherData.humidity ? <p className="bold">{weatherData.humidity}%</p> : null}
+              {weatherData.humidity ? (
+                <p className="bold">{weatherData.humidity}%</p>
+              ) : null}
 
               <p>Humidity</p>
             </div>
