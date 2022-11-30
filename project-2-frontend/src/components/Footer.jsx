@@ -34,9 +34,12 @@ function Footer() {
           <div className="middle box">
             <div className="topic">Activities</div>
             {activities.map(props => (
-            <div>
-              <a href={props.url} target="_blank" rel="noopener noreferrer">{props.name}</a>
-            </div>))}
+              <div key={props.id}>
+                <a href={props.url} target="_blank" rel="noopener noreferrer">
+                  {props.name}
+                </a>
+              </div>
+            ))}
           </div>
           <div className="media-icons">
             <a
@@ -46,21 +49,21 @@ function Footer() {
             >
               <i className="fab fa-instagram" />
             </a>
-            <a 
+            <a
               href="https://twitter.com/_inceptionu"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="fab fa-twitter" />
             </a>
-            <a 
+            <a
               href="https://www.youtube.com/@inceptionultd6615"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="fab fa-youtube" />
             </a>
-            <a 
+            <a
               href="https://www.linkedin.com/company/inceptionultd/"
               target="_blank"
               rel="noopener noreferrer"
