@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from './SearchBar';
 
 function Weather({weatherData}) {
   return (
@@ -30,9 +31,7 @@ function Weather({weatherData}) {
             height: '100%',
           }}
         >
-           <form action="" className="search-bar">
-            <input type="text" placeholder="Search Activity......" size = {51}/>
-          </form>
+          <SearchBar/>
         </div>
         {weatherData.location !== undefined && (
           <div className="bottom">
