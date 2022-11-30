@@ -7,6 +7,7 @@ function Body({ weatherData }) {
 
   return (
     <div className="mainBody">
+      <h1 className='weatherRecTitle'>Based on the weather, these activities are recommended:</h1>
       <div className="filteredCards">
         {filteredActivities.map(activityItem => (
           <MUIcards

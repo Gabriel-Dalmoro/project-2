@@ -5,15 +5,6 @@
 }
 
 body {
-  /* justify-content: center;
-  align-items: center;
-  font-family: 'DM Sans', sans-serif;
-  color: black;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: rgb(2, 0, 36); */
-  /* background: rgb(255, 255, 255); */
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: black;
@@ -29,24 +20,6 @@ header {
   background-color: black;
 }
 
-#main-title {
-  display: flex;
-  justify-content: center;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 50px;
-  font-weight: 400;
-  text-align: center;
-  margin: 0;
-}
-#subtitle {
-  display: flex;
-  justify-content: center;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  margin: 0px 30px;
-}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 * {
   margin: 0;
@@ -81,6 +54,7 @@ nav .menu {
 }
 .menu ul {
   display: inline-flex;
+  align-items: center;
 }
 .menu ul li {
   list-style: none;
@@ -99,6 +73,21 @@ nav .menu {
   transition: all 0.3s ease;
 }
 .menu ul li a:hover {
+  background: #fff;
+  color: black;
+}
+.menu ul li button {
+  text-decoration: none;
+  background-color: #1b1b1b ;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.menu ul li button:hover {
   background: #fff;
   color: black;
 }
@@ -391,14 +380,14 @@ input {
   border-radius: 10px;
 }
 
-button {
+/* button {
   border: none;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
   color: #7439db;
-}
+} */
 
 .link-btn {
   background: none;
@@ -452,3 +441,9 @@ button {
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
+
+.weatherRecTitle {
+  font-size: 40px;
+  color: white;
+  margin-top: 10px;
+}
