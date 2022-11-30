@@ -283,7 +283,7 @@ footer .content .media-icons a {
   transition: all 0.3s ease;
 }
 .content .media-icons a:hover {
-  border-color:#e36f27;
+  border-color:hsla(0, 77%, 52%, 0.995);
 }
 footer .bottom {
   width: 100%;
@@ -292,13 +292,13 @@ footer .bottom {
   padding: 0 40px 5px 0;
 }
 footer .bottom a {
-  color:#e36f27;
+  color:hsla(0, 77%, 52%, 0.995);;
 }
 footer a {
   transition: all 0.3s ease;
 }
 footer a:hover {
-  color: #e36f27;
+  color: hsla(0, 77%, 52%, 0.995);;
 }
 @media (max-width: 1100px) {
   footer .content .middle {
@@ -327,20 +327,30 @@ footer a:hover {
 }
 
 .MUIcards {
-  margin: 15px;
+  /*margin: 15px;*/
+  width:250px;
+  height: 250px;margin: 5px;
   justify-content: center;
   text-align: center;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  min-width: 250;
-  max-width: 350;
+ /* min-width: 250;*/
+  /*max-width: 350;*/
+  position: relative;
 }
 
 .MUIcards > * {
   flex: 1 1 33%;
 }
 
+.MUIcards:hover {
+  border: 8px solid orangered;
+  /*background-color: red;*/
+  opacity: 100%;
+  position:relative;
+  
+}
 .LoginRegister {
   text-align: center;
   display: flex;
