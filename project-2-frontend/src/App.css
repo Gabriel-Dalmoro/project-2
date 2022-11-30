@@ -3,12 +3,20 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+html, body{
+  height: 100vh;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: black;
-  background-image: linear-gradient(79deg, #f4bb47, #e31837 68%, #f7944d);
+  background-image: linear-gradient(79deg, #f4bb47, #e31837, 68%, #f7944d);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 0 16px;
 }
 
@@ -225,12 +233,19 @@ nav .menu {
   font-family: 'Poppins', sans-serif;
   text-decoration: none;
 }
+
+.mainAppBody {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+}
+
 footer {
   width: 100%;
-  bottom: 0;
-  left: 0;
+  /* bottom: 0;
+  left: 0; */
   background: #111;
-  /* position: fixed; */
+  flex-shrink: 0;
 }
 footer .content p {
   font-size: 16px;
@@ -270,7 +285,7 @@ footer .content .middle {
   padding-left: 80px;
 }
 footer .content .middle a {
-  line-height: 32px;
+  line-height: 25px;
 }
 
 footer .content .media-icons a {
@@ -330,13 +345,14 @@ footer a:hover {
 }
 
 .MUIcards {
-  /*margin: 15px;*/
+  /* margin: 15px; */
   width:250px;
-  height: 250px;margin: 5px;
+  height: 250px;
+  margin: 5px;
   justify-content: center;
   text-align: center;
   display: flex;
-  gap: 8px;
+  gap: 15px;
   flex-wrap: wrap;
  /* min-width: 250;*/
   /*max-width: 350;*/
@@ -393,21 +409,15 @@ input {
   border-radius: 10px;
 }
 
-/* button {
-  border: none;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #7439db;
-} */
-
 .link-btn {
   background: none;
   color: white;
   text-decoration: underline;
 }
 
+.filteredCards {
+  margin: 15px;
+}
 
 .dropbtn {
   background-color: black;

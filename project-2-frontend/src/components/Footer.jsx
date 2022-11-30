@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import activities from '../activities.js';
 
 function Footer() {
   return (
@@ -32,21 +33,10 @@ function Footer() {
           </div>
           <div className="middle box">
             <div className="topic">Activities</div>
+            {activities.map(props => (
             <div>
-              <a href="#">Tennis</a>
-            </div>
-            <div>
-              <a href="#">Biking</a>
-            </div>
-            <div>
-              <a href="#">Skiing</a>
-            </div>
-            <div>
-              <a href="#">Ice Skating</a>
-            </div>
-            <div>
-              <a href="#">Soccer</a>
-            </div>
+              <a href={props.url} target="_blank" rel="noopener noreferrer">{props.name}</a>
+            </div>))}
           </div>
           <div className="media-icons">
             <a
@@ -56,13 +46,25 @@ function Footer() {
             >
               <i className="fab fa-instagram" />
             </a>
-            <a href="https://twitter.com/_inceptionu">
+            <a 
+              href="https://twitter.com/_inceptionu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-twitter" />
             </a>
-            <a href="https://www.youtube.com/@inceptionultd6615">
+            <a 
+              href="https://www.youtube.com/@inceptionultd6615"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-youtube" />
             </a>
-            <a href="https://www.linkedin.com/company/inceptionultd/">
+            <a 
+              href="https://www.linkedin.com/company/inceptionultd/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-linkedin-in" />
             </a>
           </div>

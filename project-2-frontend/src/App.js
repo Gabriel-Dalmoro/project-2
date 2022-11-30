@@ -9,19 +9,22 @@ import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
 import Login from './pages/LoginA.jsx';
 import Register from './pages/RegisterA.jsx';
+import activities from './activities.js';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-        <Footer />
+        <div className="mainAppBody">
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>
+        <Footer name={activities.name} />
       </Router>
       <ToastContainer />
     </div>

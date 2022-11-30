@@ -3,7 +3,7 @@ import activities from '../activities.js';
 import MUIcards from './MUIcards.jsx';
 
 function Body({ weatherData }) {
-  const filteredActivities = activities.filter(el => el.minTemp <= 20);
+  const filteredActivities = activities.filter(el => el.minTemp <= 13);
 
   return (
     <div className="mainBody">
