@@ -294,7 +294,7 @@ footer .content .media-icons a {
   transition: all 0.3s ease;
 }
 .content .media-icons a:hover {
-  border-color: #ff0066;
+  border-color:#e36f27;
 }
 footer .bottom {
   width: 100%;
@@ -303,13 +303,13 @@ footer .bottom {
   padding: 0 40px 5px 0;
 }
 footer .bottom a {
-  color: #ff0066;
+  color:#e36f27;
 }
 footer a {
   transition: all 0.3s ease;
 }
 footer a:hover {
-  color: #ff0066;
+  color: #e36f27;
 }
 @media (max-width: 1100px) {
   footer .content .middle {
