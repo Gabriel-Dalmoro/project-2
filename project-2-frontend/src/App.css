@@ -122,6 +122,8 @@ nav .menu {
   color: #fff;
   font-size: 50px;
   font-weight: 600;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .search bar input[type='text'] {
@@ -228,6 +230,7 @@ footer {
   bottom: 0;
   left: 0;
   background: #111;
+  /* position: fixed; */
 }
 footer .content p {
   font-size: 16px;
