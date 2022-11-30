@@ -29,9 +29,14 @@ function NavBar() {
               <Link to="/about">About</Link>
             </li>
             {user ? (
-              <li>
-                <button onClick={onLogout}>Logout</button>
-              </li>
+              <>
+                <li>
+                  <button onClick={onLogout}>Logout</button>
+                </li>
+                <li>
+                  <Link to="/profile">Profile</Link>
+                </li>
+              </>
             ) : (
               <>
                 <li>
