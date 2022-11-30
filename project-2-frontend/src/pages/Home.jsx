@@ -15,13 +15,13 @@ const Home = () => {
   };
 
   // TODO: This might change based on the redux approach
-  const getProfileData = async () => {
-    try {
-      let response = await fetch('http://localhost:5001/api/users/me');
-      let values = await response.json();
-      setProfileData(values);
-    } catch (ex) {}
-  };
+  // const getProfileData = async () => {
+  //   try {
+  //     let response = await fetch('http://localhost:5001/api/users/me');
+  //     let values = await response.json();
+  //     setProfileData(values);
+  //   } catch (ex) {}
+  // };
 
   // Refresh the weather data every 30 minutes
   useMyEffect(() => {
@@ -32,9 +32,9 @@ const Home = () => {
     return () => clearInterval(id);
   }, []);
 
-  useMyEffect(() => {
-    getProfileData();
-  }, []);
+  // useMyEffect(() => {
+  //   getProfileData();
+  // }, []);
 
   return (
     <div>
