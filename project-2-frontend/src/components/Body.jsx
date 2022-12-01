@@ -3,16 +3,26 @@ import activities from '../activities.js';
 import MUIcards from './MUIcards.jsx';
 
 function Body({ weatherData, user }) {
+  // console.log(weatherData);
+  // console.log(activities);
+
   const [filteredActivities, setFilterActivities] = useState(
-    activities.filter(el => el.minTemp <= weatherData.temp)
+    activities.filter(el => el.minTemp <= weatherData.temperature)
   );
+  console.log(filteredActivities);
   useEffect(() => {
     if (user) {
       console.log(user);
       setFilterActivities(
         activities.filter(
-          a => a.minTemp <= weatherData.temp || user.bookmarks.includes(a.id)
+          a =>
+            a.minTemp <= weatherData.temperature ||
+            user.bookmarks.includes(a.id)
         )
+      );
+    } else {
+      setFilterActivities(
+        activities.filter(el => el.minTemp <= weatherData.temperature)
       );
     }
   }, [user, weatherData]);
