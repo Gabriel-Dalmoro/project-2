@@ -31,14 +31,14 @@ const APIKEY = process.env.API_KEY;
 
 // Get specific data from API
 const getWeather = async () => {
-  const response = await fetch(weatherUrl);
-  const data = await response.json();
+  // const response = await fetch(weatherUrl);
+  // const data = await response.json();
 
   // console.log(mockData.weather[0].description);
   return {
     location: mockData.name,
     conditions: mockData.weather[0].description,
-    temperature: mockData.main.temp.toFixed(),
+    temperature: Math.round(mockData.main.temp),
     feels_like: mockData.main.feels_like.toFixed(),
     wind_speed: mockData.wind.speed.toFixed(),
     humidity: mockData.main.humidity,
