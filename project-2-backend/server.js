@@ -51,6 +51,10 @@ const getWeather = async () => {
     // humidity: data.main.humidity,
   };
 };
+app.use('*', (req, res, next) => {
+  console.log(req.originalUrl);
+  next();
+});
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Welcome to Funactive' });

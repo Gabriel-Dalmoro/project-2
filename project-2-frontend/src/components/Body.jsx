@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import activities from '../activities.js';
 import MUIcards from './MUIcards.jsx';
 
@@ -6,17 +6,16 @@ function Body({ weatherData, user }) {
   const [filteredActivities, setFilterActivities] = useState(
     activities.filter(el => el.minTemp <= weatherData.temp)
   );
-
-  if (user) {
-    console.log(user);
-    setFilterActivities(
-      activities.filter(
-        a =>
-          a.minTemp <= weatherData.temp ||
-          user.bookmarkActivityIds.includes(a.id)
-      )
-    );
-  }
+  useEffect(() => {
+    if (user) {
+      console.log(user);
+      setFilterActivities(
+        activities.filter(
+          a => a.minTemp <= weatherData.temp || user.bookmarks.includes(a.id)
+        )
+      );
+    }
+  }, [user, weatherData]);
 
   return (
     <div className="mainBody">
