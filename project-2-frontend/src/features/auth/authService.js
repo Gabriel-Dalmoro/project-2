@@ -8,7 +8,7 @@ const register = async userData => {
 
   if (response.data) {
     // Save web token into local storage
-    localStorage.setItem('token', JSON.stringify(response.data.token));
+    localStorage.setItem('user', JSON.stringify(response.data));
   }
   // Return user data and token
   return response.data;
@@ -20,23 +20,25 @@ const login = async userData => {
 
   if (response.data) {
     // Save web token into local storage
-    localStorage.setItem('token', JSON.stringify(response.data.token));
+    // Local storage only accept strings
+    localStorage.setItem('user', JSON.stringify(response.data));
   }
   // Return user data and token
   return response.data;
 };
 
 // Logout user
-const logout = () => localStorage.removeItem('token');
+const logout = () => localStorage.removeItem('user');
 
 // Get user
 
 const getLoggedInUser = async () => {
-  const token = localStorage.getItem('token');
-  console.log(token);
+  // Convert token back into an object
+  const user = JSON.parse(localStorage.getItem('user'));
+  console.log(user);
   const config = {
     //Token needs to be in the headers
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${user.token}` },
   };
   try {
     console.log('something');
