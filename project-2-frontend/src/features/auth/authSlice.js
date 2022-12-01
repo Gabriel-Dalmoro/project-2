@@ -2,16 +2,16 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import authService from './authService.js';
 
 // Get token from local storage
-const token = JSON.parse(localStorage.getItem('token'));
-
+const user = JSON.parse(localStorage.getItem('user'));
+console.log('USER', user);
 const initialState = {
   // Only use if there is a user
-  user: null,
+  user: user ? user : null,
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: '',
-  token: token,
+  // token: user,
 };
 // Register new user
 export const register = createAsyncThunk(

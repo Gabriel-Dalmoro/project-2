@@ -19,7 +19,6 @@ import { getUser } from './features/auth/authSlice.js';
 function App() {
   const dispatch = useDispatch();
 
-  // Refresh the weather data every 30 minutes
   useEffect(() => {
     console.log('getting user');
     dispatch(getUser());
