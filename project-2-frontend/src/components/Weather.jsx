@@ -3,6 +3,11 @@ import activities from '../activities.js';
 import Dropdown from './Dropdown.jsx';
 
 function Weather({ weatherData, user }) {
+  const welcomeMessage = (user) => {
+      if (user) {
+       return <div className="userWelcome">Welcome, {user?.name && user.name}!</div>
+    }
+  }
   return (
     <div className="app">
       <div className="location">
@@ -26,7 +31,7 @@ function Weather({ weatherData, user }) {
             </div>
           </div>
         </div>
-        <div className="userWelcome">Welcome, {user?.name && user.name}!</div>
+        {welcomeMessage(user)}
         <div className="title">
           What activity will you like to do today?
         </div>
