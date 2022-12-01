@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 import express from 'express';
 import { User } from '../models/userModels.js';
+import colors from 'colors';
 
 export const protect = asyncHandler(async (req, res, next) => {
   // Initialized a token
@@ -15,9 +16,11 @@ export const protect = asyncHandler(async (req, res, next) => {
       // Get token from header
       // .split split it into array
       token = req.headers.authorization.split(' ')[1];
+      console.log(`${token}`.blue.bold);
       // Verify token
       // This takes the jwt secret in the environment variable
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      console.log(`${decoded}`.blue.bold);
       // Get user from token
       // -password exclude the password from the data that's return for this user
       req.user = await User.findById(decoded.id).select('-password');

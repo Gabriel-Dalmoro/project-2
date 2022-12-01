@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/userModels.js';
 import express from 'express';
+import colors from 'colors';
 
 // @desc    Register a new user
 // @route   /api/users
@@ -77,7 +78,7 @@ export const loginUser = asyncHandler(async (req, res) => {
 // @route   /api/users/me
 // @access  Private
 export const getMe = asyncHandler(async (req, res) => {
-  console.log(getMe);
+  console.log(`${getMe}`.blue.bold);
   const user = {
     id: req.user._id,
     email: req.user.email,
