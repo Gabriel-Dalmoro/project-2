@@ -6,8 +6,10 @@ import { logout, reset } from '../features/auth/authSlice';
 function NavBar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector(state => state.auth);
+  const auth = useSelector(state => state.auth);
 
+  console.log('NAVBAR auth', auth);
+  const user = auth.user;
   const onLogout = () => {
     dispatch(logout());
     dispatch(reset());
