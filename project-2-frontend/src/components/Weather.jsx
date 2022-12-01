@@ -26,11 +26,10 @@ function Weather({ weatherData, user }) {
             </div>
           </div>
         </div>
+        <div className="userWelcome">Welcome, {user?.name && user.name}!</div>
         <div className="title">
-          {user?.name && user.name + ' '}What activity will you like to do
-          today?
+          What activity will you like to do today?
         </div>
-
         <div
           style={{
             display: 'flex',

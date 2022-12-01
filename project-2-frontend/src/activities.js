@@ -129,7 +129,7 @@ const activities = [
     maxWind: 15,
     precipitation: 10,
     minParticipant: 1,
-    url: 'https://www.google.ca/maps/search/snowshoeing/@51.0356516,-114.1379734,11z/data=!3m1!4b1',
+    url: 'https://www.google.ca/maps/search/snowshoe+trail/@51.035819,-114.1379732,11z/data=!3m1!4b1',
     icon: <Snowshoeing sx={{ fontSize: 62 }} />,
   },
 ];
