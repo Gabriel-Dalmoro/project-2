@@ -12,8 +12,18 @@ import Register from './pages/RegisterA.jsx';
 import activities from './activities.js';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Profile from './pages/Profile.jsx';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getUser } from './features/auth/authSlice.js';
 
 function App() {
+  const dispatch = useDispatch();
+
+  // Refresh the weather data every 30 minutes
+  useEffect(() => {
+    console.log('getting user');
+    dispatch(getUser());
+  }, [dispatch]);
   return (
     <div className="App">
       <Router>

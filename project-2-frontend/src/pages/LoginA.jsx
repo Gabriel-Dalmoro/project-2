@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { login, reset } from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
 
-function Login(props) {
+function Login() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -56,7 +56,14 @@ function Login(props) {
       password,
     };
     // Dispatch login from authSlice.js
-    dispatch(login(userData));
+    dispatch(login(userData))
+      .unwrap()
+      .then(user => {
+        // After receiving a good response from API, we can navigate the user by unwrapping the AsyncThunkAction. Alternatively, we can catch the AsyncThunkAction rejection to show an error message.
+        toast.success(`Logged in as ${user.name}`);
+        navigate('/profile');
+      })
+      .catch(toast.error);
   };
 
   if (isLoading) {

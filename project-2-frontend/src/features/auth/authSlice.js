@@ -1,16 +1,17 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import authService from './authService.js';
 
-// Get user from local storage
-const user = JSON.parse(localStorage.getItem('user'));
+// Get token from local storage
+const token = JSON.parse(localStorage.getItem('token'));
 
 const initialState = {
   // Only use if there is a user
-  user: user ? user : null,
+  user: null,
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: '',
+  token: token,
 };
 // Register new user
 export const register = createAsyncThunk(
@@ -47,6 +48,11 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
 // Logout user
 export const logout = createAsyncThunk('auth/logout', async () => {
   await authService.logout();
+});
+
+// Get user
+export const getUser = createAsyncThunk('auth/getUser', async () => {
+  await authService.getLoggedInUser();
 });
 
 // createSlice accepts an initial state, an object of reducer functions, and a "slice name", and automatically generates action creators and action types that correspond to the reducers and state.
@@ -94,6 +100,21 @@ export const authSlice = createSlice({
         state.user = null;
       })
       .addCase(logout.fulfilled, state => {
+        state.user = null;
+      })
+
+      .addCase(getUser.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.user = action.payload;
+      })
+      .addCase(getUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
         state.user = null;
       });
   },
