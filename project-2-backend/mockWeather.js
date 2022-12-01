@@ -13,7 +13,7 @@ export const mockData = {
   ],
   base: 'stations',
   main: {
-    temp: -20.73,
+    temp: -10.73,
     feels_like: -8.28,
     temp_min: -5.63,
     temp_max: -1.1,
