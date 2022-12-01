@@ -18,11 +18,11 @@ function Weather({ weatherData, user }) {
 
           <div style={{ width: '0px' }}>
             <div className="description">
-              <p>
+              <div>
                 {weatherData.conditions ? (
                   <h1>{weatherData.conditions}</h1>
                 ) : null}
-              </p>
+              </div>
             </div>
           </div>
         </div>
