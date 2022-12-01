@@ -1,5 +1,6 @@
 import React from 'react';
-import SearchBar from './SearchBar';
+import activities from '../activities.js';
+import Dropdown from './Dropdown.jsx';
 
 function Weather({ weatherData, user }) {
   return (
@@ -40,7 +41,10 @@ function Weather({ weatherData, user }) {
             height: '100%',
           }}
         >
-          <SearchBar />
+          <Dropdown 
+          url={activities}
+          />
+
         </div>
         {weatherData.location !== undefined && (
           <div className="bottom">

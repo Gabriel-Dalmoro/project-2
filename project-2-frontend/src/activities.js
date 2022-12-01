@@ -5,7 +5,6 @@ import {
   SportsBaseball,
   SportsVolleyball,
   Hiking,
-  Snowboarding,
   IceSkating,
   Sledding,
   Snowshoeing,

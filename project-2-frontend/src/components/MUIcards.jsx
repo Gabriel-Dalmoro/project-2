@@ -30,9 +30,6 @@ const openActivityPage = () => {
             <Typography variant="body2" color="text.secondary">
               Season: {props.season}
             </Typography>
-            {/* <Typography variant="body2" color="text.secondary">
-              Minimum Participant: {props.minParticipant}
-            </Typography> */}
             <Typography variant="body2" color="text.secondary">
               Max Temperature: {props.maxTemp}
             </Typography>

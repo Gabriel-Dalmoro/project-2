@@ -64,48 +64,43 @@ function Login(props) {
   }
 
   return (
-    <div className="auth-form-container">
-      <h2>Login</h2>
-      <form className="login-form" onSubmit={onSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          name="email"
-          onChange={onChange}
-          placeholder="youremail@example.com"
-          required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={onChange}
-          placeholder="*********"
-          name="password"
-          required
-        />
+    <div className="loginPage">
+      <div className="auth-form-container">
+        <h2>Login</h2>
+        <form className="login-form" onSubmit={onSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            name="email"
+            onChange={onChange}
+            placeholder="youremail@example.com"
+            required
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={onChange}
+            placeholder="*********"
+            name="password"
+            required
+          />
 
-        <Fab
-          type="submit"
-          variant="extended"
-          size="medium"
-          color="white"
-          aria-label="add"
-        >
-          <LoginIcon sx={{ mr: 1 }} />
-          Login
-        </Fab>
-      </form>
-
-      {/* <button
-        className="link-btn"
-        onClick={() => props.onFormSwitch('register')}
-      >
-        Don't have an account? Sign up here.
-      </button> */}
+          <Fab
+            type="submit"
+            variant="extended"
+            size="medium"
+            color="white"
+            aria-label="add"
+          >
+            <LoginIcon sx={{ mr: 1 }} />
+            Login
+          </Fab>
+        </form>
+      </div>
     </div>
   );
 }

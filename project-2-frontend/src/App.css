@@ -20,6 +20,10 @@ body {
   padding: 0 16px;
 }
 
+.aboutTitle {
+  font-size: 60px;
+}
+
 header {
   display: flex;
   text-align: center;
@@ -234,18 +238,28 @@ nav .menu {
   text-decoration: none;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
 .mainAppBody {
   display: flex;
   flex-direction: column;
-  flex: auto;
+  /* flex: auto; */
+  /* min-height: 90vh; */
+  flex-grow: 1;
 }
 
 footer {
   width: 100%;
-  /* bottom: 0;
-  left: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
   background: #111;
   flex-shrink: 0;
+  /* position: fixed; */
 }
 footer .content p {
   font-size: 16px;
@@ -385,6 +399,27 @@ footer a:hover {
 .register-form {
   display: flex;
   flex-direction: column;
+  align-content: center;
+}
+
+.auth-form-container {
+  margin: 50px;
+}
+
+
+.auth-form-container h2 {
+  color: white;
+  font-size: 40px;
+}
+
+.loginPage {
+  display: flex;
+  justify-content: center;
+}
+
+.registerPage {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -392,7 +427,7 @@ footer a:hover {
     padding: 5rem;
     border: 1px solid white;
     border-radius: 10px;
-    margin: 0.5rem;
+    /* margin: 0.5rem; */
     width: 700px;
   }
 }

@@ -33,9 +33,9 @@ function Footer() {
           </div>
           <div className="middle box">
             <div className="topic">Activities</div>
-            {activities.map(props => (
+            {activities.map(act => (
             <div>
-              <a href={props.url} target="_blank" rel="noopener noreferrer">{props.name}</a>
+              <a href={act.url} target="_blank" rel="noopener noreferrer">{act.name}</a>
             </div>))}
           </div>
           <div className="media-icons">
