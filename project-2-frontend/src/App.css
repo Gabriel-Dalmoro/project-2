@@ -388,7 +388,7 @@ footer a:hover {
 
 .MUIcards:hover {
   /* outline-width: 10px; */
-  /* border: 8px solid orangered; */
+  border: 8px solid orangered; 
   /*background-color: red;*/
   opacity: 100%;
   position:relative;
