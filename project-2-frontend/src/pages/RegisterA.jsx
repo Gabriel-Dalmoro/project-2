@@ -6,6 +6,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '../components/Spinner';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration.js';
 import { register, reset } from '../features/auth/authSlice.js';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import activities from '../activities.js';
 
 function Register(props) {
   const [formData, setFormData] = useState({
@@ -13,9 +19,10 @@ function Register(props) {
     email: '',
     password: '',
     password2: '',
+    bookmarkActivityIds: '',
   });
 
-  const { name, email, password, password2 } = formData;
+  const { name, email, password, password2, bookmarkActivityIds } = formData;
 
   // Initialize dispatch
   const dispatch = useDispatch();
@@ -49,7 +56,7 @@ function Register(props) {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(email);
+    // console.log(email);
 
     if (password !== password2) {
       toast.error('Password do not match');
@@ -58,17 +65,19 @@ function Register(props) {
         name,
         email,
         password,
+        bookmarkActivityIds: [bookmarkActivityIds]
       };
       // Dispatching register from authSlice.js
       // This get the register form hook up to createAsyncThunk
       dispatch(register(userData));
+      // console.log(userData)
     }
   };
 
   if (isLoading) {
     return <Spinner />;
   }
-
+//  console.log(bookmarkActivityIds)
   return (
     <div className="registerPage">
       <div className="auth-form-container">
@@ -96,6 +105,24 @@ function Register(props) {
             name="email"
             required
           />
+          <label htmlFor="select-fav-activity">Select your favorite activity</label>
+          <Box sx={{backgroundColor: 'rgba(255, 255, 255, 1)', borderRadius: 4 }}>
+            <FormControl fullWidth >
+              {/* <InputLabel id="demo-simple-select-label">Select Activity</InputLabel> */}
+              <Select
+                labelId="demo-simple-select-label"
+                id="select-fav-activity"
+                value={bookmarkActivityIds}
+                label="Select Activity"
+                onChange={onChange}
+                name='bookmarkActivityIds'
+              >
+              {activities.map(activity => (
+                  <MenuItem value={activity.id}>{activity.name}</MenuItem>
+              ))}
+              </Select>
+            </FormControl>
+          </Box>
           <label htmlFor="password">Password</label>
           <input
             type="password"

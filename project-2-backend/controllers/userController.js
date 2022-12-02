@@ -9,7 +9,7 @@ import colors from 'colors';
 // @route   /api/users
 // @access  Public
 export const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, bookmarkActivityIds } = req.body;
 
   // Validation
   if (!name || !email || !password) {
@@ -35,6 +35,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     name,
     email,
     password: hashedPassword,
+    bookmarkActivityIds,
   });
 
   // Show status when user is created
@@ -43,6 +44,7 @@ export const registerUser = asyncHandler(async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
+      bookmarkActivityIds: user.bookmarkActivityIds,
       token: generateToken(user._id),
     });
   } else {
@@ -66,7 +68,7 @@ export const loginUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       token: generateToken(user._id),
-      bookmarks: user.bookmarkActivityIds,
+      bookmarkActivityIds: user.bookmarkActivityIds,
     });
   } else {
     res.status(401);

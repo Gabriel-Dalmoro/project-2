@@ -6,12 +6,11 @@ import React, { useEffect as useMyEffect, useState } from 'react';
 import Body from '../components/Body.jsx';
 import Weather from '../components/Weather.jsx';
 import profileService from '../features/auth/profile/profileService';
+import { getUser } from '../features/auth/authSlice.js';
 
 const Home = () => {
   const { user, isLoading, isSuccess } = useSelector(state => state.auth);
-
-  console.log(user);
-
+  
   const [weatherData, setWeatherData] = useState({});
   const [profileData, setProfileData] = useState({});
 

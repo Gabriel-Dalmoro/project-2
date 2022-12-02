@@ -4,7 +4,7 @@ import MUIcards from './MUIcards.jsx';
 
 function Body({ weatherData, user }) {
 
-  const userActivities = activities.filter(el => user?.bookmarks?.includes(el.id))
+  const userActivities = activities.filter(el => user?.bookmarkActivityIds?.includes(el.id))
   const weatherFilteredActivities = activities.filter(el => el.minTemp <= weatherData.temperature)
 
   return (
