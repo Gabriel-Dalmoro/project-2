@@ -27,28 +27,28 @@ app.use(cors());
 
 const APIKEY = process.env.API_KEY;
 
-// const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=calgary&units=metric&appid=${APIKEY}`;
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=calgary&units=metric&appid=${APIKEY}`;
 
 // Get specific data from API
 const getWeather = async () => {
-  // const response = await fetch(weatherUrl);
-  // const data = await response.json();
+  const response = await fetch(weatherUrl);
+  const data = await response.json();
 
   // console.log(mockData.weather[0].description);
   return {
-    location: mockData.name,
-    conditions: mockData.weather[0].description,
-    temperature: Math.round(mockData.main.temp),
-    feels_like: mockData.main.feels_like.toFixed(),
-    wind_speed: mockData.wind.speed.toFixed(),
-    humidity: mockData.main.humidity,
+    // location: mockData.name,
+    // conditions: mockData.weather[0].description,
+    // temperature: Math.round(mockData.main.temp),
+    // feels_like: mockData.main.feels_like.toFixed(),
+    // wind_speed: mockData.wind.speed.toFixed(),
+    // humidity: mockData.main.humidity,
 
-    // location: data.name,
-    // conditions: data.weather[0].description,
-    // temperature: data.main.temp.toFixed(),
-    // feels_like: data.main.feels_like.toFixed(),
-    // wind_speed: data.wind.speed.toFixed(),
-    // humidity: data.main.humidity,
+    location: data.name,
+    conditions: data.weather[0].description,
+    temperature: Math.round(data.main.temp),
+    feels_like: Math.round(data.main.feels_like),
+    wind_speed: Math.round(data.wind.speed),
+    humidity: data.main.humidity,
   };
 };
 app.use('*', (req, res, next) => {
