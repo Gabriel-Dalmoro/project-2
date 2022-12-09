@@ -5,11 +5,11 @@ import MUIcards from './MUIcards.jsx';
 function Body({ weatherData, user }) {
 
   const userActivities = activities.filter(el => user?.bookmarkActivityIds?.includes(el.id))
-  const weatherFilteredActivities = activities.filter(el => el.minTemp <= weatherData.temperature)
+  const weatherFilteredActivities = activities.filter(el => el.minTemp <= 25  )
 
   return (
     <div className="mainBody">
-      { user && <h1 className="weatherRecTitle">These are your favorite activities:</h1> }
+      { user && <h1 className="weatherRecTitle">Based on your selection, this is your favorite activity:</h1> }
       { user && <div className="filteredCards">
           {userActivities.map(activityItem => (
             <MUIcards
