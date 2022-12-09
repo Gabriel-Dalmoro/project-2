@@ -75,6 +75,16 @@ app.use('/api/users', userRouter);
 
 app.use(errorHandler);
 
+// serve the react application
+app.use(express.static('../project-2-frontend/build'));
+
+// catch any non-specific urls
+app.get('*', (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, '../project-2-frontend/build', 'index.html')
+  );
+});
+
 // Server Listener
 app.listen(PORT, () =>
   console.log(`Server is running on port ${PORT}`.rainbow.bold)

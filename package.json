@@ -1,0 +1,20 @@
+{
+  "name": "FunActive",
+  "version": "1.0.1",
+  "description": "EvolveU Cohort 9 Project 2.",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "install-server": "cd project-2-backend && npm install && cd ..",
+    "install-client": "cd project-2-frontend && npm install && cd ..",
+    "build-client": "cd project-2-frontend && npm run build && cd ..",
+    "start-server": "cd project-2-backend && npm start",
+    "install": "npm run install-server && npm run install-client",
+    "build": "npm run build-client",
+    "start": "npm run start-server"
+  },
+  "author": "",
+  "license": "ISC"
+}

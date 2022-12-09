@@ -15,7 +15,8 @@
     "process-env": "^2.0.2"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "DevStart": "nodemon server.js",
+    "start": "node server.js"
   },
   "name": "project-2-backend",
   "type": "module",
