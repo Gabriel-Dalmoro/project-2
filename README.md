@@ -1,11 +1,12 @@
 # FunActive
 
 ![App Screenshot](https://imgur.com/uwkCz7q.png)
-FunActive is a website that provides information about the fun physical activities within Calgary!
+
+#### FunActive is a website that provides information about the fun physical activities within Calgary!
 
 > Project #2 for InceptionU cohort 9, by **[Gabriel H. Dalmoro](https://github.com/Gabriel-Dalmoro)**, **[George Kwan](https://github.com/georgekwan)**, and **[Tosin Kasaba](https://github.com/tosin0589)**.
 
-To start the server, go into the backend folder and run `$ npm start`. On a separate terminal, go into the frontend folder and run `$ npm start` to be able to open the website in the browser.
+#### To start the server, go into the backend folder and run `$ npm start`. On a separate terminal, go into the frontend folder and run `$ npm start` to be able to open the website in the browser.
 
 ---
 
