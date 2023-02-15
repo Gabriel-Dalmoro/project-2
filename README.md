@@ -1,5 +1,6 @@
 # FunActive
 
+![App Screenshot](https://imgur.com/uwkCz7q.png)
 FunActive is a website that provides information about the fun physical activities within Calgary!
 
 > Project #2 for InceptionU cohort 9, by **[Gabriel H. Dalmoro](https://github.com/Gabriel-Dalmoro)**, **[George Kwan](https://github.com/georgekwan)**, and **[Tosin Kasaba](https://github.com/tosin0589)**.
