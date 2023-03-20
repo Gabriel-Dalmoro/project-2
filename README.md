@@ -1,6 +1,6 @@
 # FunActive
 
-![App Screenshot](https://imgur.com/uwkCz7q.png)
+![App Screenshot](https://imgur.com/1Wg2heI.png)
 
 #### FunActive is a website that provides information about the fun physical activities within Calgary!
 
