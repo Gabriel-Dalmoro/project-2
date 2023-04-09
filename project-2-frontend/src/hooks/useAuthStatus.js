@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 export const useAuthStatus = () => {
@@ -8,8 +8,7 @@ export const useAuthStatus = () => {
   // Get user through Redux from the backend
   const { user } = useSelector(state => state.auth);
 
-  // Run only when user changes
-  useEffect(() => {
+  const handleUserChange = useCallback(() => {
     if (user) {
       setLoggedIn(true);
       setCheckingStatus(false);
@@ -18,6 +17,10 @@ export const useAuthStatus = () => {
       setCheckingStatus(false);
     }
   }, [user]);
+
+  useEffect(() => {
+    handleUserChange();
+  }, [handleUserChange]);
 
   return { loggedIn, checkingStatus };
 };
