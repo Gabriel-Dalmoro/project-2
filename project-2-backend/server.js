@@ -1,10 +1,11 @@
 import express from 'express';
-import fetch from 'node-fetch';
-import dotenv from 'dotenv';
 import cors from 'cors';
+import helmet from 'helmet';
 import userRouter from './routes/userRoutes.js';
 import errorHandler from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
+import getWeather from './utils/getWeather.js';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -23,25 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 // Enable Express server to respond to preflight requests
 app.use(cors());
 
-const APIKEY = process.env.API_KEY;
+app.use(helmet());
 
-const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=calgary&units=metric&appid=${APIKEY}`;
-
-// Get specific data from API
-const getWeather = async () => {
-  const response = await fetch(weatherUrl);
-  const data = await response.json();
-
-  return {
-    location: data.name,
-    conditions: data.weather[0].description,
-    temperature: Math.round(data.main.temp),
-    feels_like: Math.round(data.main.feels_like),
-    wind_speed: Math.round(data.wind.speed),
-    humidity: data.main.humidity,
-  };
-};
-app.use('*', (req, res, next) => {
+app.use((req, res, next) => {
   console.log(req.originalUrl);
   next();
 });
@@ -66,8 +51,6 @@ app.use('/api/users', userRouter);
 app.use(errorHandler);
 
 // Server Listener
-app.listen(PORT, () =>
-  console.log(`Server is running on port ${PORT}`.rainbow.bold)
-);
-
-export default app;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`.rainbow.bold);
+});
