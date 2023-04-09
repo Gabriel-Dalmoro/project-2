@@ -31,24 +31,22 @@ const login = async userData => {
 const logout = () => localStorage.removeItem('user');
 
 // Get user
-
 const getLoggedInUser = async () => {
-  // Convert token back into an object
-  const user = JSON.parse(localStorage.getItem('user'));
-  console.log(user);
-  const config = {
-    //Token needs to be in the headers
-    headers: { Authorization: `Bearer ${user.token}` },
-  };
   try {
-    console.log('something');
-    let response = await axios.get(
+    const user = JSON.parse(localStorage.getItem('user'));
+    const config = {
+      // Token needs to be in the headers
+      headers: { Authorization: `Bearer ${user.token}` },
+    };
+    const response = await axios.get(
       'http://localhost:5001/api/users/me',
       config
     );
-
     return response.data;
-  } catch (ex) {}
+  } catch (error) {
+    console.log('Error fetching user data', error);
+    throw error;
+  }
 };
 
 const authService = {
