@@ -2,8 +2,6 @@ import express from 'express';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { mockData } from './mockWeather.js';
-import colors from 'colors';
 import userRouter from './routes/userRoutes.js';
 import errorHandler from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
@@ -20,7 +18,7 @@ connectDB();
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 // Enable Express server to respond to preflight requests
 app.use(cors());
@@ -34,15 +32,7 @@ const getWeather = async () => {
   const response = await fetch(weatherUrl);
   const data = await response.json();
 
-  // console.log(mockData.weather[0].description);
   return {
-    // location: mockData.name,
-    // conditions: mockData.weather[0].description,
-    // temperature: Math.round(mockData.main.temp),
-    // feels_like: mockData.main.feels_like.toFixed(),
-    // wind_speed: mockData.wind.speed.toFixed(),
-    // humidity: mockData.main.humidity,
-
     location: data.name,
     conditions: data.weather[0].description,
     temperature: Math.round(data.main.temp),
