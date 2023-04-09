@@ -70,7 +70,7 @@ cd project-2-backend
 
 To run the client
 
-1. From root directory navigate to the server.<br>
+1. From root directory navigate to the client.<br>
 
 ```bash
 cd project-2-frontend
