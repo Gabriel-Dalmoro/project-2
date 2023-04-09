@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "helmet": "^6.1.1"
+    "helmet": "^6.1.1",
+    "node-fetch": "^3.3.1"
   }
 }
